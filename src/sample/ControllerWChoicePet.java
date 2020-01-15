@@ -2,6 +2,7 @@ package sample;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -23,17 +24,31 @@ public class ControllerWChoicePet extends BaseController implements Initializabl
     @FXML
     private ImageView imageDog;
 
-    static int animal = 0;
+    public static String getAnimal() {
+        return animal;
+    }
+
+    public static void setAnimal(String animal) {
+        ControllerWChoicePet.animal = animal;
+    }
+
+    private static String animal = null;
+    /*
+    1 - кот
+    2 - собака
+    3 - кролик
+    4 - морская свинка
+     */
 
     @FXML
     void initializeCat(MouseEvent event) {
-        animal = 1;
+        animal = "cat";
         choiceCast();
     }
 
     @FXML
     void initializeDog(MouseEvent event) {
-        animal = 2;
+        animal = "dog";
         choiceCast();
     }
 
@@ -42,8 +57,9 @@ public class ControllerWChoicePet extends BaseController implements Initializabl
 
     }
 
-    protected void choiceCast () {
+    protected void choiceCast() {
         ControllerWChoiceAge controllerWChoiceAge = (ControllerWChoiceAge) Main.getNavigation().load(ControllerWChoiceAge.URL_FXML);
+        ControllerWChoiceAge.setPet(animal);
         controllerWChoiceAge.Show();
     }
 }
