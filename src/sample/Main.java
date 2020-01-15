@@ -1,19 +1,38 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class Main extends Application {
 
+    private static Navigation navigation;
+
+    public static Navigation getNavigation()
+    {
+        return navigation;
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("WindowChoisePet.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+
+        navigation = new Navigation(primaryStage);
+
+        primaryStage.setTitle("Time Machine");
         primaryStage.show();
+
+        //navigate to first view
+        Main.getNavigation().load(ControllerWChoicePet.URL_FXML).Show();
+
+        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent t) {
+                Platform.exit();
+                System.exit(0);
+            }
+        });
     }
 
 

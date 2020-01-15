@@ -1,30 +1,10 @@
 package sample;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.Node;
 
-public class Controller {
+public interface Controller {
+    Node getView();
+    void setView(Node view);
 
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private Label label;
-
-    @FXML
-    void initialize(MouseEvent event) {
-
-        System.exit(0);
-    }
-
-    @FXML
-    void initialize() {
-
-    }
+    void Show();
 }
