@@ -2,11 +2,9 @@ package sample;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 public class ControllerWChoicePet extends BaseController implements Initializable {
@@ -20,29 +18,32 @@ public class ControllerWChoicePet extends BaseController implements Initializabl
     private URL location;
 
     @FXML
-    private Label label;
-
-    int x = 0;
+    private ImageView imageCat;
 
     @FXML
-    void initialize(MouseEvent event) {
-        for (int i = 0; i < 10000; i++) {
-            x++;
-            System.out.println(x);
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    System.out.println(x);
-                    label.setText("" + x);
-                }
-            });
-        }
-        System.exit(0);
+    private ImageView imageDog;
+
+    static int animal = 0;
+
+    @FXML
+    void initializeCat(MouseEvent event) {
+        animal = 1;
+        choiceCast();
     }
 
+    @FXML
+    void initializeDog(MouseEvent event) {
+        animal = 2;
+        choiceCast();
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    protected void choiceCast () {
+        ControllerWChoiceAge controllerWChoiceAge = (ControllerWChoiceAge) Main.getNavigation().load(ControllerWChoiceAge.URL_FXML);
+        controllerWChoiceAge.Show();
     }
 }

@@ -17,7 +17,7 @@ public class Navigation {
         this.stage = stage;
         scene = new Scene(new Pane());
         stage.setMaxHeight(400);
-        stage.setMaxWidth(300);
+        stage.setMaxWidth(600);
         stage.setResizable(false);
         stage.setScene(scene);
     }
