@@ -28,6 +28,16 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
     @FXML
     private TextField textMonth;
 
+    public static double getAge() {
+        return age;
+    }
+
+    public static void setAge(double age) {
+        ControllerWChoiceAge.age = age;
+    }
+
+    private static double age = 0;
+
     @FXML
     void buttonCountEnter(KeyEvent event) {
         pressCount();
