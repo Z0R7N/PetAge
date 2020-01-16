@@ -3,6 +3,8 @@ package sample;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -25,19 +27,16 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
     private Button buttonCount;
 
     @FXML
-    private TextField textYears;
+    private Slider sliderYear;
 
     @FXML
-    private TextField textMonth;
+    private Slider sliderMonth;
 
     @FXML
-    private Label labelYearMax;
+    private Label labelYear;
 
     @FXML
-    private Slider labelYear;
-
-    @FXML
-    private Label labelMonthMax;
+    private Label labelMonth;
 
     public static double getAge() {
         return age;
@@ -58,7 +57,18 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
     }
 
     private static String pet = null;
-    static int ageMax = 0;
+
+    public static int getAgeMax() {
+        return ageMax;
+    }
+
+    public static void setAgeMax(int ageMax) {
+        ControllerWChoiceAge.ageMax = ageMax;
+    }
+
+    private static int ageMax = 0; // для максимального возраста слайдера
+    static int y = 5;
+    static int m = 0;
 
     @FXML
     void buttonCountEnter(KeyEvent event) {
@@ -70,11 +80,27 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
         buttonCount.setOnAction(event1 -> {
             pressCount();
         });
+        sliderYear.valueProperty().addListener(
+                new ChangeListener<Number>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
+                        y = newValue.intValue();
+                        labelYear.setText("" + y);
+                    }
+                }
+        );
+        sliderMonth.valueProperty().addListener(
+                new ChangeListener<Number>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
+                        m = newValue.intValue();
+                        labelMonth.setText("" + m);
+                    }
+                }
+        );
     }
 
     protected void pressCount() {
-        int y = Integer.parseInt(textYears.getText());
-        int m = Integer.parseInt(textMonth.getText());
 
     }
 
@@ -93,7 +119,6 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
     public void PreShowing() {
         super.PreShowing();
         labelsPet();
-        labelYearMax.setText("от 0 до " + ageMax);
-s
+        sliderYear.setMax(ageMax);
     }
 }
