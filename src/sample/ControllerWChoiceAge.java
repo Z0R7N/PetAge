@@ -101,7 +101,10 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
     }
 
     protected void pressCount() {
-
+        double agePet = y + ((double)m * 10 / 12) / 10;
+        AnimalCat.setAge(agePet);
+        AnimalCat animal = new AnimalCat();
+        animal.count();
     }
 
     protected void labelsPet() {

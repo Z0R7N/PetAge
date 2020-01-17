@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerCounting">
+    <children>
+        <Label layoutX="93.0" layoutY="52.0" text="Человеческий возраст вашего питомца">
+            <font>
+                <Font name="Gabriola" size="32.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelDifYear" layoutX="296.0" layoutY="138.0" prefHeight="39.0" prefWidth="101.0" text="лет">
+            <font>
+                <Font name="Gabriola" size="32.0" />
+            </font>
+        </Label>
+        <Button fx:id="buttonChoicePet" layoutX="54.0" layoutY="245.0" mnemonicParsing="false" onKeyPressed="#buttonChoicePet" prefHeight="57.0" prefWidth="218.0" text="Выбрать животное" textAlignment="CENTER">
+            <font>
+                <Font name="Gabriola" size="26.0" />
+            </font>
+        </Button>
+        <Label fx:id="labelHumanYear" layoutX="198.0" layoutY="123.0" prefHeight="69.0" prefWidth="87.0" text="5">
+            <font>
+                <Font name="Ebrima" size="47.0" />
+            </font>
+        </Label>
+      <Button fx:id="buttonChoiceAge" layoutX="318.0" layoutY="245.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="218.0" text="Выбрать возраст" textAlignment="CENTER">
+         <font>
+            <Font name="Gabriola" size="26.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
