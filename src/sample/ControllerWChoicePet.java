@@ -34,12 +34,6 @@ public class ControllerWChoicePet extends BaseController implements Initializabl
     }
 
     private static String animal = null;
-    /*
-    1 - кот
-    2 - собака
-    3 - кролик
-    4 - морская свинка
-     */
 
     @FXML
     void initializeCat(MouseEvent event) {
@@ -49,8 +43,7 @@ public class ControllerWChoicePet extends BaseController implements Initializabl
 
     @FXML
     void initializeDog(MouseEvent event) {
-        animal = "dog";
-        choiceCast();
+        Main.getNavigation().load(ControllerChoiceDog.URL_FXML).Show();
     }
 
     @Override

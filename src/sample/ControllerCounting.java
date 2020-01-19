@@ -48,6 +48,12 @@ public class ControllerCounting extends BaseController implements Initializable 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if (humanAge % 10 == 1 && humanAge < 8 || humanAge > 20) {
+            labelDifYear.setText("год");
+        }
+        if (humanAge % 10 > 1 && humanAge % 10 < 5 && humanAge < 8 || humanAge > 20){
+            labelDifYear.setText("года");
+        }
         labelHumanYear.setText(String.valueOf(humanAge));
         buttonChoicePet.setOnAction(event -> {
             choicePet();

@@ -12,8 +12,14 @@ public class AnimalCat {
     private static double age = 0;
 
     public void count() {
-        double age = (getAge() - 2) * 4 + 24;
-        int humanAge = (int) Math.round(age);
+        double y; //значение для человеческого возраста
+        double x = getAge(); // текущее значение возраста кошки
+        if (x >= 1.5) {
+            y = (x - 2) * 4 + 24;
+        } else {
+            y = (-2.5921 * (x * x * x) + 4.0353 * (x * x) + 13.3309 * x + 0.1953);
+        }
+        int humanAge = (int) Math.round(y);
         ControllerCounting.setHumanAge(humanAge);
         runWindowCount();
     }

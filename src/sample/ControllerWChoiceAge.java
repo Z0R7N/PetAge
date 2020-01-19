@@ -110,10 +110,16 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
     protected void labelsPet() {
         switch (pet) {
             case "cat":
+                ageMax = 28;
+                break;
+            case "DogBig":
+                ageMax = 13;
+                break;
+            case "DogSmall":
                 ageMax = 24;
                 break;
-            case "dog":
-                ageMax = 28;
+            case "DogMed":
+                ageMax = 20;
                 break;
         }
     }
@@ -121,6 +127,8 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
     @Override
     public void PreShowing() {
         super.PreShowing();
+        y = 5;
+        m = 0;
         labelsPet();
         sliderYear.setMax(ageMax);
     }
