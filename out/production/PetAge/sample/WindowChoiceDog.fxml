@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerChoiceDog">
+   <children>
+      <ImageView fx:id="imgDogSmll" layoutX="57.0" layoutY="46.0" onMouseClicked="#initializeSmall">
+         <image>
+            <Image url="@../assets/dogSmall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgDogMed" layoutX="241.0" layoutY="46.0" onMouseClicked="#initializeMed">
+         <image>
+            <Image url="@../assets/dogMedium.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgDogBig" layoutX="416.0" layoutY="46.0" onMouseClicked="#initializeBig">
+         <image>
+            <Image url="@../assets/dogBig.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="buttonBack" layoutX="247.0" layoutY="256.0" mnemonicParsing="false" onKeyPressed="#keyEnter" text="Назад">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+      <Label layoutX="79.0" layoutY="187.0" text="до 9-ти кг">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="228.0" layoutY="187.0" text="от 10-ти до 22-х кг">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="439.0" layoutY="187.0" text="от 23-х кг">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
