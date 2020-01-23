@@ -20,7 +20,7 @@ public class Main extends Application {
 
         navigation = new Navigation(primaryStage);
 
-        primaryStage.setTitle("Time Machine");
+        primaryStage.setTitle("Pet Age");
         primaryStage.show();
 
         //navigate to first view

@@ -34,19 +34,22 @@ public class ControllerChoiceDog extends BaseController implements Initializable
 
     @FXML
     void initializeBig(MouseEvent event) {
-        setAnimal("DogBig");
+        ControllerWChoiceAge.setAgeMax(13);
+        ControllerWChoicePet.animalCat = new DogBig();
         choiceCast();
     }
 
     @FXML
     void initializeMed(MouseEvent event) {
-        setAnimal("DogMed");
+        //setAnimal("DogMed");
+        ControllerWChoicePet.animalCat = new DogMed();
         choiceCast();
     }
 
     @FXML
     void initializeSmall(MouseEvent event) {
-        setAnimal("DogSmall");
+        //setAnimal("DogSmall");
+        ControllerWChoicePet.animalCat = new DogSmall();
         choiceCast();
     }
 
@@ -55,15 +58,15 @@ public class ControllerChoiceDog extends BaseController implements Initializable
         Main.getNavigation().load(ControllerWChoicePet.URL_FXML).Show();
     }
 
-    public static String getAnimal() {
-        return animal;
-    }
-
-    public static void setAnimal(String animal) {
-        ControllerChoiceDog.animal = animal;
-    }
-
-    private static String animal;
+//    public static String getAnimal() {
+//        return animal;
+//    }
+//
+//    public static void setAnimal(String animal) {
+//        ControllerChoiceDog.animal = animal;
+//    }
+//
+//    private static String animal;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -74,7 +77,6 @@ public class ControllerChoiceDog extends BaseController implements Initializable
 
     protected void choiceCast() {
         ControllerWChoiceAge controllerWChoiceAge = (ControllerWChoiceAge) Main.getNavigation().load(ControllerWChoiceAge.URL_FXML);
-        ControllerWChoiceAge.setPet(animal);
         controllerWChoiceAge.Show();
     }
 }

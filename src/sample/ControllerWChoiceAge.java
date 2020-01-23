@@ -48,15 +48,15 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
 
     private static double age = 0;
 
-    public static String getPet() {
-        return pet;
-    }
-
-    public static void setPet(String pet) {
-        ControllerWChoiceAge.pet = pet;
-    }
-
-    private static String pet = null;
+//    public static String getPet() {
+//        return pet;
+//    }
+//
+//    public static void setPet(Object pet) {
+//        ControllerWChoiceAge.pet = pet;
+//    }
+//
+//    private static String pet = null;
 
     public static int getAgeMax() {
         return ageMax;
@@ -103,33 +103,33 @@ public class ControllerWChoiceAge extends BaseController implements Initializabl
     protected void pressCount() {
         double agePet = y + ((double)m * 10 / 12) / 10;
         AnimalCat.setAge(agePet);
-        AnimalCat animal = new AnimalCat();
-        animal.count();
+
+        ControllerWChoicePet.animalCat.count();
     }
 
-    protected void labelsPet() {
-        switch (pet) {
-            case "cat":
-                ageMax = 28;
-                break;
-            case "DogBig":
-                ageMax = 13;
-                break;
-            case "DogSmall":
-                ageMax = 24;
-                break;
-            case "DogMed":
-                ageMax = 20;
-                break;
-        }
-    }
+//    protected void labelsPet() {
+//        switch (pet) {
+//            case "cat":
+//                ageMax = 28;
+//                break;
+//            case "DogBig":
+//                ageMax = 13;
+//                break;
+//            case "DogSmall":
+//                ageMax = 24;
+//                break;
+//            case "DogMed":
+//                ageMax = 20;
+//                break;
+//        }
+//    }
 
     @Override
     public void PreShowing() {
         super.PreShowing();
         y = 5;
         m = 0;
-        labelsPet();
+        //labelsPet();
         sliderYear.setMax(ageMax);
     }
 }
