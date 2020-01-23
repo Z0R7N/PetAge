@@ -15,9 +15,4 @@ public class DogSmall extends AnimalCat {
         ControllerCounting.setHumanAge(humanAge);
         runWindowCount();
     }
-
-    @Override
-    public void runWindowCount() {
-        super.runWindowCount();
-    }
 }

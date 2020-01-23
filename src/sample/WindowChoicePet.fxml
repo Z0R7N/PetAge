@@ -6,15 +6,20 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerWChoicePet">
     <children>
-        <ImageView fx:id="imageCat" layoutX="101.0" layoutY="58.0" onMouseClicked="#initializeCat">
+        <ImageView fx:id="imageCat" layoutX="89.0" layoutY="39.0" onMouseClicked="#initializeCat">
             <image>
                 <Image url="@../assets/cat.jpg" />
             </image>
         </ImageView>
-        <ImageView fx:id="imageDog" layoutX="379.0" layoutY="58.0" onMouseClicked="#initializeDog">
+        <ImageView fx:id="imageDog" layoutX="379.0" layoutY="39.0" onMouseClicked="#initializeDog">
             <image>
                 <Image url="@../assets/dog.jpg" />
             </image>
         </ImageView>
+      <ImageView fx:id="imagePig" layoutX="89.0" layoutY="200.0" onMouseClicked="#initializePig">
+         <image>
+            <Image url="@../assets/guineaPig.jpg" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

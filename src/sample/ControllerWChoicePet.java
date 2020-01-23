@@ -24,22 +24,22 @@ public class ControllerWChoicePet extends BaseController implements Initializabl
     @FXML
     private ImageView imageDog;
 
-//    public static String getAnimal() {
-//        return animal;
-//    }
-//
-//    public static void setAnimal(String animal) {
-//        ControllerWChoicePet.animal = animal;
-//    }
-//
-//    private static String animal = null;
+    @FXML
+    private ImageView imagePig;
+
     static AnimalCat animalCat;
 
     @FXML
     void initializeCat(MouseEvent event) {
-        //animal = "cat";
         ControllerWChoiceAge.setAgeMax(28);
         animalCat = new AnimalCat();
+        choiceCast();
+    }
+
+    @FXML
+    void initializePig(MouseEvent event){
+        ControllerWChoiceAge.setAgeMax(15);
+        animalCat = new Pig();
         choiceCast();
     }
 
